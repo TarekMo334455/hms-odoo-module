@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  odoo:
+    image: odoo:17
+    depends_on: []
+    ports:
+      - 8017:8069
+    volumes:
+      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=host.docker.internal
+      - USER=odoo
+      - PASSWORD=odoo
